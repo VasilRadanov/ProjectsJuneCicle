@@ -27,15 +27,15 @@ public class QuizGame {
 
     private static void initializeQuestions() {
         try {
-            String category1File = "category1.csv";
+            String category1File = "Nature.csv";
             List<String[]> category1Questions = readQuestionsFromCSV(category1File);
             questionsMap.put(CATEGORY1.toLowerCase(), category1Questions);
 
-            String category2File = "category2.csv";
+            String category2File = "Animals.csv";
             List<String[]> category2Questions = readQuestionsFromCSV(category2File);
             questionsMap.put(CATEGORY2.toLowerCase(), category2Questions);
 
-            String category3File = "category3.csv";
+            String category3File = "Plants.csv";
             List<String[]> category3Questions = readQuestionsFromCSV(category3File);
             questionsMap.put(CATEGORY3.toLowerCase(), category3Questions);
         } catch (IOException e) {
