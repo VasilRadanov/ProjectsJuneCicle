@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.*;
 
 public class QuizGame {
-    private static final String CATEGORY1 = "Category 1";
-    private static final String CATEGORY2 = "Category 2";
-    private static final String CATEGORY3 = "Category 3";
+    private static final String CATEGORY1 = "Nature";
+    private static final String CATEGORY2 = "Animals";
+    private static final String CATEGORY3 = "Plants";
 
     private static final Map<String, List<String[]>> questionsMap = new HashMap<>();
 
@@ -122,10 +122,15 @@ public class QuizGame {
 
     private static void displayQuestion(String[] question) {
         System.out.println("Question: " + question[0]);
-        System.out.println("1. " + question[1]);
-        System.out.println("2. " + question[2]);
-        System.out.println("3. " + question[3]);
-        System.out.println("4. " + question[4]);
-        System.out.print("Enter your answer (1-4): "); // Prompt for answer
+
+        // Shuffle the answer options
+        List<String> answerOptions = new ArrayList<>(Arrays.asList(question[1], question[2], question[3], question[4]));
+        Collections.shuffle(answerOptions);
+
+        System.out.println("1. " + answerOptions.get(0));
+        System.out.println("2. " + answerOptions.get(1));
+        System.out.println("3. " + answerOptions.get(2));
+        System.out.println("4. " + answerOptions.get(3));
+        System.out.print("Enter your answer (1-4): ");
     }
 }
